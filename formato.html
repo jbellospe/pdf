@@ -3,83 +3,150 @@
 <head>
 	<meta charset="utf-8">
 	<title>Cabecera fija</title>
+    <style type="text/css">
+        @media print {
+            @page {
+                size: A4; /* DIN A4 standard, Europe */
+                margin:0.5in;
+            }
+            div {
+                break-inside: avoid;
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0.5in">
-    <div style="display: flex; margin-bottom: 20px; width: 100%;">
-        <div style="width: 50%; background-color: #626567; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
-
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <img src="{{data}}" style="width: 70px; position:absolute; left: 40%;">
+    <div style="display: grid; grid-template-columns: 45% 55%; margin-bottom: 20px; width: 100%;">
+        <div style=" background-color: #47494b; border-top-left-radius: 10px; border-bottom-left-radius: 10px; display: flex; align-items: center; justify-content: center;">
+            <img src="{{afiliar}}" style="width: 200px; height: auto;">
         </div>
-        <div style="width:50%; background-color: #E5E7E9; padding: 10px 10px 10px 80px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+        <div style=" background-color: #EDEDED; padding: 10px 10px 10px 80px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
             <p style="margin: 0; font-size: small;">Camionera de Jalisco S. A. de C. V.</p>
             <p style="margin: 0; font-size: small;">Sucursal Periférico Sur </p>
             <p style="margin: 0; font-size: small;">Tel. (33) 36685410 </p>
             <p style="margin: 0; font-size: small;">{{name}}</p>
         </div>
     </div>
-    <div style="display: flex; justify-content: space-between; background-color: #E5E7E9 ; padding: 20px; border-radius: 10px;">
+    <div style="display: grid; grid-template-columns: 60% 40%; background-color: #EDEDED ; padding: 20px; border-radius: 10px;">
         <div>
-          <p style="margin: 0; font-size: small;">Nombre: EDUARDO ABRAHAM GONZÁLEZ KENNEDY </p>
-          <p style="margin: 0; font-size: small;">Teléfono: (33) 3040 2270</p>
-          <p style="margin: 0; font-size: small;">E-mail: eduardogk@gmail.com</p>
+          <p style="margin: 0; font-size: small;">Nombre: {{nombre}} </p>
+          <p style="margin: 0; font-size: small;">Teléfono:  {{telefono}} </p>
+          <p style="margin: 0; font-size: small;">E-mail: {{email}} </p>
         </div>
         <div>
-            <p style="margin: 0; font-size: small;">FOLIO: 51800</p>
-            <p style="margin: 0; font-size: small;">FECHA: 13-AGOSTO-2021</p>
-        </div>
-    </div>
-    <div style="display: flex; justify-content: space-between; margin-top: 20px; padding:0px 20px 0px 20px;">
-        <div>
-          <p style="margin: 0; font-size: small;">MODELO: MV </p>
-        </div>
-        <div>
-            <p style="margin: 0; font-size: small;">VERSIÓN: 4x2</p>
-        </div>
-        <div>
-            <p style="margin: 0; font-size: small;">AÑO: 2022</p>
+            <p style="margin: 0; font-size: small;"><span style="font-weight: 700;">FOLIO:</span> {{folio}}</p>
+            <p style="margin: 0; font-size: small;"><span style="font-weight: 700;">FECHA:</span> {{fecha}}</p>
         </div>
     </div>
-    <div style="background-color: #626567; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+    <div style="display: grid; grid-template-columns: 33% 34% 33% ; margin-top: 20px; padding:0px 20px 0px 20px;">
+        <div>
+          <p style="margin: 0; font-size: small; text-align: center;"><span style="font-weight: 700;">MODELO:</span> MV </p>
+        </div>
+        <div>
+            <p style="margin: 0; font-size: small; text-align: center;"><span style="font-weight: 700;">VERSIÓN:</span> 4x2</p>
+        </div>
+        <div>
+            <p style="margin: 0; font-size: small; text-align: center;"><span style="font-weight: 700;">AÑO:</span> 2022</p>
+        </div>
+    </div>
+    <div>
+    <div style="background-color: #47494b; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
         <p style=" color: white; text-align: center; margin: 0;">ESPECIFICACIONES</p>
     </div>
-    <div style="display: flex; margin-bottom: 10px;">
-        <div style="width: 80%; height: 300px; background-color: #E5E7E9;">
-
+    <div style="display: grid; grid-template-columns: 70% 30%;  margin-bottom: 10px;">
+        <div style=" height: auto; background-color: #EDEDED;">
+            <ul>
+                {{#each especificaciones}}
+                <li style="font-size: 10px;"><span style="font-weight: 700;">{{@key}}:</span> {{this}}</li>
+                {{/each}}
+            </ul>
         </div>
-        <div style="width:20%; ; padding: 10px 10px 10px 80px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
-            
+        <div style=" display: flex; align-items: center; flex-direction: column; justify-content: flex-end; padding: 10px 10px 10px 10px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+            <img src="{{truck}}" style="width: 100%; height: auto;">
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <p style="font-size: 10px; margin: 0; font-weight: 700; text-align: right;">PRECIO DEL <br> CHASIS:</p>
+                <p style="font-size: 12px; margin: 0; font-weight: 700;">$2,000,000,000.°°</p>   
+            </div>
         </div>
     </div>
-    <div style="background-color: #626567; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+</div>
+    <div>
+    <div style="background-color: #47494b; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
         <p style=" color: white; text-align: center; margin: 0;">CARROCERIA</p>
     </div>
-    <div style="display: flex; margin-bottom: 10px;">
-        <div style="width: 80%; height: 100px; background-color: #E5E7E9;">
-
+    <div style="display: grid; grid-template-columns: 70% 30%;">
+        <div style=" height: auto; background-color: #EDEDED;">
+            <ul>
+                {{#each carroceria}}
+                <li style="font-size: 10px;"><span style="font-weight: 700;">{{@key}}:</span> {{this}}</li>
+                {{/each}}
+            </ul>
         </div>
-        <div style="width:20%; ; padding: 10px 10px 10px 80px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
-            
+        <div style="display: flex; align-items: center; padding: 10px 10px 10px 10px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <p style="font-size: 10px; margin: 0; font-weight: 700; text-align: right;">PRECIO DEL <br> CHASIS:</p>
+                <p style="font-size: 12px; margin: 0; font-weight: 700;">$2,000,000,000.°°</p>   
+            </div>
         </div>
     </div>
-    <div style="display: flex;">
-        <div style="width: 60%;">
-            <div style="margin-right: 10px; background-color: #626567; padding: 5px; border-radius: 5px; ">
+</div>
+<div>
+    <div style="display: grid; grid-template-columns: 59% 39%; column-gap: 2%; margin-top: 10px;">
+        <div>
+            <div style="margin-right: 10px; background-color: #47494b; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; ">
                 <p style="color: white; text-align: center; margin: 0;">OPCIONES</p>
             </div>
         </div>
-        <div style="background-color: #626567; width: 40%; padding: 5px; border-radius: 5px;">
+        <div style="background-color: #47494b; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <p style=" color: white; text-align: center; margin: 0;">OBSERVACIONES:</p>
         </div>
     </div>
-    <div style="display: flex;">
-        <div style="width: 60%;">
-            <div style="height: 100px; margin-right: 10px; background-color: #E5E7E9; padding: 5px;">
-
+    <div style="display: grid; grid-template-columns: 59% 39%; column-gap: 2%;">
+        <div style="background-color: #EDEDED;height: auto; margin-right: 10px; padding: 5px;">
+            {{#each opciones}}
+            <div style="display: flex; justify-content: space-between; padding: 0px 20px 0px 20px;">
+                <p style="font-size: 12px; margin: 0;">{{this.key}}</p>
+                <p style="font-size: 12px; margin: 0;">{{this.costo}}</p>
             </div>
+            {{/each}}
         </div>
-        <div style="width: 40%; padding: 5px; border-radius: 5px;">
-            
+        <div style="padding: 10px; border-radius: 5px; background-color:#EDEDED">
+            <p style="text-align: justify; font-size: 12px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis officia unde, ducimus numquam quos illum, perspiciatis magni voluptatum molestias voluptatibus voluptas beatae debitis nulla aut. Distinctio cumque libero consequatur doloremque.</p>
         </div>
     </div>
+</div>
+    <p style="text-align: right; font-weight: 700;"><span style="color:#FF4612">PRECIO DE VENTA TOTAL:</span> {{preciototal}}</p>
+    <div style="display: grid; grid-template-columns: 50% 50%; margin-bottom: 10px; ">
+        <div style="height: auto;">
+            <p style="text-align: center; font-size: 11px;">Quedando a sus órdenes, Atentamente:</p>
+            <div style="display: flex; align-content: center; align-items: center; flex-direction: column; margin-top: 40px;">
+                <hr style="width:100%;text-align:left; margin: 0; height: .5px; background-color: black;">
+                <p style="text-align: center; margin: 0; font-size: 14px;">DIANA SARAHI GARCÍA HERNÁNDEZ</p>
+                <p style="text-align: center; margin: 0; font-size: 14px;" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg>
+                  33 1010 2525
+
+                </p>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; padding: 10px">
+            <div style="width: 60%; display: flex; justify-content: center; align-items: center;">
+                <p style="font-size: 10px;">ESCANEA PARA OBTENER <br>
+                    <span style="font-size: 14px;">LA FICHA TÉCNICA</span>
+                </p>
+            </div>
+            <div style="width: 40%;  display: flex; justify-content: center; align-items: center;">
+                <img src="{{qr}}" style="width: 100px; height: auto;">
+            </div>
+        </div>
+    </div>
+    <p style="font-size: 8px;">COTIZACIÓN EN PESOS MEXICANOS, IVA INCLUIDO. VIGENCIA DE 03 DÍAS, SUJETA A CAMBIOS SIN PREVIO AVISO. LA IMAGEN DE LA PRESENTE COTIZACIÓN ES
+        MERAMENTE ILUSTRATIVA. EL PAGO DE ESTA OPERACIÓN DEBERÁ DE REALIZARSE MEDIANTE CHEQUE NOMINATIVO O POR MEDIO DE TRANSFERENCIA A CUENTA
+        BANCARIA A NUESTRO NOMBRE. POR DISPOSICIÓN DE LA LEY FEDERAL PARA A PREVENCIÓN E IDENTIFICACIÓN DE OPERACIONES, NO PUEDE REALIZARSE EL
+        PAGO EN EFECTIVO</p>
     
 </body>
 <html
