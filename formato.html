@@ -52,19 +52,19 @@
     </div>
     <div>
     <div style="background-color: #47494b; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-        <p style=" color: white; text-align: center; margin: 0;">ESPECIFICACIONES</p>
+        <p style=" color: white; text-align: center; margin: 0;  font-weight: 700;">ESPECIFICACIONES</p>
     </div>
     <div style="display: grid; grid-template-columns: 70% 30%;  margin-bottom: 10px;">
         <div style=" height: auto; background-color: #EDEDED;">
             <ul>
                 {{#each especificaciones}}
-                <li style="font-size: 10px;"><span style="font-weight: 700;">{{@key}}:</span> {{this}}</li>
+                <li style="font-size: 10px; list-style-type: none;"><span style="font-weight: 700;">{{@key}}:</span> {{this}}</li>
                 {{/each}}
             </ul>
         </div>
         <div style=" display: flex; align-items: center; flex-direction: column; justify-content: flex-end; padding: 10px 10px 10px 10px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
             <img src="{{truck}}" style="width: 100%; height: auto;">
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-end;">
                 <p style="font-size: 10px; margin: 0; font-weight: 700; text-align: right;">PRECIO DEL <br> CHASIS:</p>
                 <p style="font-size: 12px; margin: 0; font-weight: 700;">$2,000,000,000.°°</p>   
             </div>
@@ -73,18 +73,18 @@
 </div>
     <div>
     <div style="background-color: #47494b; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-        <p style=" color: white; text-align: center; margin: 0;">CARROCERIA</p>
+        <p style=" color: white; text-align: center; margin: 0; font-weight: 700;">CARROCERIA</p>
     </div>
     <div style="display: grid; grid-template-columns: 70% 30%;">
         <div style=" height: auto; background-color: #EDEDED;">
             <ul>
                 {{#each carroceria}}
-                <li style="font-size: 10px;"><span style="font-weight: 700;">{{@key}}:</span> {{this}}</li>
+                <li style="font-size: 10px; list-style-type: none;"><span style="font-weight: 700;">{{@key}}:</span> {{this}}</li>
                 {{/each}}
             </ul>
         </div>
         <div style="display: flex; align-items: center; padding: 10px 10px 10px 10px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-end;">
                 <p style="font-size: 10px; margin: 0; font-weight: 700; text-align: right;">PRECIO DEL <br> CHASIS:</p>
                 <p style="font-size: 12px; margin: 0; font-weight: 700;">$2,000,000,000.°°</p>   
             </div>
@@ -95,15 +95,15 @@
     <div style="display: grid; grid-template-columns: 59% 39%; column-gap: 2%; margin-top: 10px;">
         <div>
             <div style="margin-right: 10px; background-color: #47494b; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; ">
-                <p style="color: white; text-align: center; margin: 0;">OPCIONES</p>
+                <p style="color: white; text-align: center; margin: 0;  font-weight: 700;">OPCIONES</p>
             </div>
         </div>
         <div style="background-color: #47494b; padding: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-            <p style=" color: white; text-align: center; margin: 0;">OBSERVACIONES:</p>
+            <p style=" color: white; text-align: center; margin: 0;  font-weight: 700;">OBSERVACIONES:</p>
         </div>
     </div>
     <div style="display: grid; grid-template-columns: 59% 39%; column-gap: 2%;">
-        <div style="background-color: #EDEDED;height: auto; margin-right: 10px; padding: 5px;">
+        <div style="background-color: #EDEDED;height: auto; margin-right: 10px; padding: 5px; padding-top: 10px;">
             {{#each opciones}}
             <div style="display: flex; justify-content: space-between; padding: 0px 20px 0px 20px;">
                 <p style="font-size: 12px; margin: 0;">{{this.key}}</p>
